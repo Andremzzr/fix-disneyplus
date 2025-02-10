@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Disney+ Fullscreen Fix",
+  "version": "1.0",
+  "description": "Prevents Disney+ from exiting fullscreen mode after an episode ends.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://www.disneyplus.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.disneyplus.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
