@@ -4,6 +4,7 @@ A simple Chrome extension that prevents Disney+ from exiting fullscreen mode aft
 
 ## Features
 - Keeps Disney+ in fullscreen mode.
+- Skips resumes, intros and jump to the next episode.
 
 ## Installation
 1. Download or clone this repository.
