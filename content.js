@@ -30,7 +30,7 @@
       return;
     }
 
-    if (!isFullscreen()) {
+    if (!isFullscreen() && fullscreenButton && !video.paused) {
       console.log('Clicking fullscreen button');
       fullscreenButton.click();
     } else {
@@ -38,5 +38,17 @@
     }
   }
 
-  setInterval(tryEnterFullscreen, CHECK_INTERVAL);
+  function trySkip() {
+    const skipButton = findButtonInShadowRoots(document, ".skip__button");
+    if (skipButton) {
+      skipButton.click();
+    }
+  }
+
+  function playBtns() {
+    trySkip();
+    tryEnterFullscreen();
+  }
+
+  setInterval(playBtns, CHECK_INTERVAL);
 })();
